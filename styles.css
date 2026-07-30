@@ -2,7 +2,7 @@
 :root {
     /* App itself */
     --app-bg-color: #2B332D;
-    --app-text-color: rgb(216, 255, 224);
+    --app-text-color: #d8ffe0;
     --font-family: "Cascadia Mono", monospace;
     --line-height: 1.1;
     --big-font: "Sixtyfour";
@@ -23,7 +23,6 @@
 /*Code to achieve the grid background effect: https://codepen.io/naprirfan/pen/xEvRae*/
 body {
     margin: 0;
-    padding: 20px;
 
     display: flex;
     flex-direction: column;
@@ -134,12 +133,27 @@ label {
     width: 100%;
     max-width: 1200px;
     flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 #preview {
     background: var(--result-bg-color);
     color: var(--result-text-color);
     padding: var(--canvas-padding);
+}
+
+/* Footer */
+footer{
+    width: 100%;
+    background-color: #191F19;
+    margin-top: 25px;
+    padding: 20px;
+    text-align: center;
+}
+
+a{
+    color: #82eda8;
 }
 
 /* Goodies */
