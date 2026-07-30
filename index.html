@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="ASCII, ascii-studio, studio, art">
+    <meta name="description" content="Photography studio for your ASCII art">
+    <meta name="author" content="Inés">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ASCII Studio</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="./resources/icon.png">
+</head>
+
+<body>
+    <header>
+        <h1>ASCII Studio</h1>
+        <p>Turn ASCII art into PNG images!</p>
+    </header>
+
+    <div class="workspace">
+        <form id="settings">
+            <div class="column center">
+                <label for="bg-color">Background color</label>
+                <input id="bg-color" type="color" value="#191F19">
+            </div>
+            <div class="column center">
+                <label for="text-color">Text color</label>
+                <input id="text-color" type="color" value="#d8ffe0">
+            </div>
+            <div class="column center">
+                <label for="margins">Margin size</label>
+                <input id="margins" min="0" max="50" value="40" step="10" type="range">
+                <output id="value"></output>
+            </div>
+        </form>
+
+        <div class="column">
+            <div style="width: 100%; display: flex; justify-content: space-between;">
+                <label class="label" for="input">Paste your ASCII art into the area below:</label>
+                <button type="button" id="clearInput">Clear</button>
+            </div>
+            <textarea id="input" placeholder="Paste your ASCII art here..."></textarea>
+        </div>
+    </div>
+
+    <div class="result column">
+        <div style="width: 100%; display: flex; justify-content: space-between;">
+            <label class="label" for="input">Preview:</label>
+            <button type="button" id="saveArt">Save as PNG</button>
+        </div>
+        <canvas id="preview"></canvas>
+    </div>
+</body>
+
+<script type="module" src="script.js"></script>
+
+<!-- SCRIPT FOR THE MARGINS SLIDER -->
+<script>
+    const value = document.querySelector("#value");
+    const input = document.querySelector("#margins");
+    input.addEventListener("input", (event) => {
+        value.textContent = event.target.value + " px";
+    });
+    document.addEventListener("DOMContentLoaded", () => {
+        value.textContent = input.value + " px";
+    });
+</script>
+
+</html>

@@ -1,0 +1,165 @@
+/* Basic default variables */
+:root {
+    /* App itself */
+    --app-bg-color: #2B332D;
+    --app-text-color: rgb(216, 255, 224);
+    --font-family: "Cascadia Mono", monospace;
+    --line-height: 1.1;
+    --big-font: "Sixtyfour";
+    --box-bg-color: #191F19;
+
+    /* Canvas preview and final result */
+    --result-bg-color: #191F19;
+    --result-text-color: #d8ffe0;
+    --canvas-padding: 40px;
+    --font-size: 12px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* General styling of the app */
+/*Code to achieve the grid background effect: https://codepen.io/naprirfan/pen/xEvRae*/
+body {
+    margin: 0;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+
+    background: var(--app-bg-color);
+    background-image: linear-gradient(#29463082 .1em, transparent .1em), linear-gradient(90deg, #29463082 .1em, transparent .1em);
+    background-size: 3em 3em;
+
+    color: var(--app-text-color);
+    font-family: var(--font-family);
+    font-size: 18px;
+}
+
+@font-face {
+    font-family: 'Sixtyfour';
+    src: url('/resources/Sixtyfour-Regular-VariableFont_BLED\,SCAN.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+header {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-family: var(--big-font);
+    font-size: 64px;
+    margin: 0 0 10px 0;
+    font-weight: 600;
+    text-shadow: 0px 0px 20px rgb(99, 149, 109);
+    text-align: center;
+}
+
+
+/* Styling for the settings and input */
+.workspace {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px 40px 20px;
+}
+
+[type="color"] {
+    height: 50px;
+    width: 50px;
+    border: 1px #191F19;
+}
+
+input:hover,
+button {
+    cursor: pointer;
+}
+
+#settings {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 2rem;
+    height: auto;
+    width: 100%;
+    background-color: var(--box-bg-color);
+    margin-bottom: 25px;
+}
+
+button {
+    background-color: var(--app-text-color);
+    border: 2px solid var(--app-bg-color);
+    font-family: var(--font-family);
+    font-size: 18px;
+    padding: 10px;
+}
+
+button:hover {
+    filter: opacity(0.8);
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    background-color: var(--result-bg-color);
+    color: var(--result-text-color);
+    border: 1px solid var(--result-bg-color);
+    padding: 12px;
+    font-family: monospace;
+    resize: vertical;
+    margin-bottom: 25px;
+    outline: none;
+}
+
+textarea:focus {
+    border-color: var(--result-text-color);
+}
+
+label {
+    margin-bottom: 20px;
+}
+
+/* Styling for the preview and result */
+.result {
+    width: 100%;
+    max-width: 1200px;
+    flex-direction: column;
+}
+
+#preview {
+    background: var(--result-bg-color);
+    color: var(--result-text-color);
+    padding: var(--canvas-padding);
+}
+
+/* Goodies */
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.center {
+    justify-content: center;
+    align-items: center;
+}
+
+/* Queries for responsiveness */
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 50px !important;
+    }
+    #settings input{
+        margin-bottom: 20px;
+    }
+}
