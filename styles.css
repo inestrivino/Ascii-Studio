@@ -42,7 +42,7 @@ body {
 
 @font-face {
     font-family: 'Sixtyfour';
-    src: url('/resources/Sixtyfour-Regular-VariableFont_BLED\,SCAN.ttf') format('truetype');
+    src: url('./resources/Sixtyfour-Regular-VariableFont_BLED\,SCAN.ttf') format('truetype');
     font-weight: 100 900;
     font-style: normal;
     font-display: swap;
